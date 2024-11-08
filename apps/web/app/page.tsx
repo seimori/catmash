@@ -1,7 +1,13 @@
+import { VoteLayout } from "../components/layout/VoteLayout/VoteLayout";
+import { VoteCard } from "../components/ui/VoteCard/VoteCard";
+
 export default function Home() {
   return (
     <>
-      <h1>Hey</h1>
+      <VoteLayout>
+        <VoteCard />
+        <VoteCard />
+      </VoteLayout>
     </>
   );
 }

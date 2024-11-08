@@ -10,7 +10,7 @@ export const Header = () => {
         width="200"
         height="100"
       />
-      <h1>Catmash</h1>
+      <h1 className={styles.title}>Catmash</h1>
     </section>
   );
 };

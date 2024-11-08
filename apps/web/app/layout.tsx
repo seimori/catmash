@@ -1,5 +1,6 @@
-import { Footer } from "../components/layout/Header/Footer/Footer";
+import { Footer } from "../components/layout/Footer/Footer";
 import { Header } from "../components/layout/Header/Header";
+import { MainContent } from "../components/layout/MainContent/MainContent";
 import "./globals.css";
 
 export default function RootLayout({
@@ -11,7 +12,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-        {children}
+        <MainContent>{children}</MainContent>
         <Footer>Voir le classement des chats</Footer>
       </body>
     </html>

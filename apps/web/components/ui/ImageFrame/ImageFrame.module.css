@@ -1,0 +1,12 @@
+.imageFrame {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  min-width: 300px;
+}
+
+.image {
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+}
