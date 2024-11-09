@@ -1,19 +1,24 @@
 import { Injectable } from '@nestjs/common';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { UpdateCatDto } from './dto/update-cat.dto';
+import { PrismaService } from 'prisma/prisma.service';
 
 @Injectable()
 export class CatsService {
+  constructor(private prisma: PrismaService) {}
+
   create(createCatDto: CreateCatDto) {
-    return 'This action adds a new cat';
+    return this.prisma.cats.create({
+      data: createCatDto,
+    });
   }
 
   findAll() {
-    return `This action returns all cats`;
+    return this.prisma.cats.findMany();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} cat`;
+    return this.prisma.cats.findUnique({ where: { id: id } });
   }
 
   update(id: number, updateCatDto: UpdateCatDto) {
