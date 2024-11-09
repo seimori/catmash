@@ -11,8 +11,11 @@ export class CatsService {
   //   });
   // }
 
-  findAll() {
-    return this.prisma.cats.findMany();
+  findAll(limit?: number, orderByScore?: 'desc' | 'asc') {
+    return this.prisma.cats.findMany({
+      take: limit,
+      orderBy: { score: orderByScore },
+    });
   }
 
   findOne(id: number) {

@@ -1,4 +1,4 @@
-import { Controller, Get, Patch, Param } from '@nestjs/common';
+import { Controller, Get, Patch, Param, Query } from '@nestjs/common';
 import { CatsService } from './cats.service';
 
 @Controller('cats')
@@ -11,8 +11,9 @@ export class CatsController {
   // }
 
   @Get()
-  findAll() {
-    return this.catsService.findAll();
+  findAll(@Query() queryParams: any) {
+    const { limit, orderByScore } = queryParams;
+    return this.catsService.findAll(+limit, orderByScore);
   }
 
   @Get(':id')
