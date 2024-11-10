@@ -11,11 +11,17 @@ export class CatsService {
   //   });
   // }
 
-  findAll(limit?: number, orderByScore?: 'desc' | 'asc') {
+  findAll(limit?: string, orderByScore?: 'desc' | 'asc') {
     return this.prisma.cats.findMany({
-      take: limit,
+      take: +limit,
       orderBy: { score: orderByScore },
     });
+  }
+
+  findAllRandom(limit?: string) {
+    return this.prisma.$queryRaw`
+      SELECT * FROM cats ORDER BY RAND() LIMIT ${limit ?? 100} 
+    `;
   }
 
   findOne(id: number) {

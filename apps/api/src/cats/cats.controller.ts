@@ -13,7 +13,13 @@ export class CatsController {
   @Get()
   findAll(@Query() queryParams: any) {
     const { limit, orderByScore } = queryParams;
-    return this.catsService.findAll(+limit, orderByScore);
+    return this.catsService.findAll(limit, orderByScore);
+  }
+
+  @Get('/random')
+  findAllRandom(@Query() queryParams: any) {
+    const { limit } = queryParams;
+    return this.catsService.findAllRandom(limit);
   }
 
   @Get(':id')
