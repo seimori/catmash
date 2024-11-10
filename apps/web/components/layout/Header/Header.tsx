@@ -3,7 +3,7 @@ import styles from "./Header.module.css";
 
 export const Header = () => {
   return (
-    <section className={styles.header}>
+    <header className={styles.header}>
       <Image
         src="/merging_cats.svg"
         alt="catmash logo"
@@ -11,6 +11,6 @@ export const Header = () => {
         height="100"
       />
       <h1 className={styles.title}>Catmash</h1>
-    </section>
+    </header>
   );
 };
