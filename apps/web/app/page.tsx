@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Footer } from "../components/layout/Footer/Footer";
 import { MainContent } from "../components/layout/MainContent/MainContent";
 import { VoteLayout } from "../components/layout/VoteLayout/VoteLayout";
@@ -37,7 +38,9 @@ export default function Home() {
           />
         </VoteLayout>
       </MainContent>
-      <Footer duelCount={duelCount}>Voir le classement des chats</Footer>
+      <Footer duelCount={duelCount}>
+        <Link href="/ranking">Voir le classement des chats</Link>
+      </Footer>
     </>
   );
 }

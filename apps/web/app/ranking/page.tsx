@@ -3,6 +3,7 @@ import { MainContent } from "../../components/layout/MainContent/MainContent";
 import { RankingLayout } from "../../components/layout/RankingLayout/RankingLayout";
 import { getRankedCats } from "../../utils/actions/getRankedCats";
 import { RankCard } from "../../components/ui/RankCard/RankCard";
+import Link from "next/link";
 
 export default async function Ranking() {
   const cats = await getRankedCats();
@@ -16,7 +17,9 @@ export default async function Ranking() {
           ))}
         </RankingLayout>
       </MainContent>
-      <Footer>Revenir au vote</Footer>
+      <Footer>
+        <Link href="/">Revenir au vote</Link>
+      </Footer>
     </>
   );
 }
