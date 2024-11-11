@@ -4,7 +4,7 @@ import styles from "./VoteCard.module.css";
 import { ImageFrame } from "../ImageFrame/ImageFrame";
 import { Button } from "../Button/Button";
 import { Cat } from "../../../types";
-import { incrementCatScore } from "../../../utils/incrementCatScore";
+import { incrementCatScore } from "../../../utils/actions/incrementCatScore";
 
 export const VoteCard = ({
   cat,

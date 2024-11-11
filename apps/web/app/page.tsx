@@ -4,8 +4,8 @@ import { Footer } from "../components/layout/Footer/Footer";
 import { MainContent } from "../components/layout/MainContent/MainContent";
 import { VoteLayout } from "../components/layout/VoteLayout/VoteLayout";
 import { VoteCard } from "../components/ui/VoteCard/VoteCard";
-import { useDuelCount } from "../hooks/useDuelCount";
-import { useGetDuelingCats } from "../hooks/useGetDuelingCats";
+import { useDuelCount } from "../utils/hooks/useDuelCount";
+import { useGetDuelingCats } from "../utils/hooks/useGetDuelingCats";
 
 export default function Home() {
   const { firstDuelingCat, secondDuelingCat, isLoading, error, refetch } =

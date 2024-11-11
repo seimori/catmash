@@ -1,6 +1,6 @@
-import { getDuelingCats } from "../utils/getDuelingCats";
+import { getDuelingCats } from "../actions/getDuelingCats";
 import { useCallback, useEffect, useState } from "react";
-import { Cat } from "../types";
+import { Cat } from "../../types";
 
 export const useGetDuelingCats = () => {
   const [firstDuelingCat, setFirstDuelingCat] = useState<Cat>();

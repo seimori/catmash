@@ -1,4 +1,4 @@
-import { Cat } from "../types";
+import { Cat } from "../../types";
 
 export async function getDuelingCats(): Promise<Cat[]> {
   const response = await fetch(

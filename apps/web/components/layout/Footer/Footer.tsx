@@ -5,8 +5,12 @@ export const Footer = ({
   duelCount,
 }: {
   children: React.ReactNode;
-  duelCount: number;
+  duelCount?: number;
 }) => {
+  if (duelCount === undefined) {
+    return <footer className={styles.footer}>{children}</footer>;
+  }
+
   return (
     <footer className={styles.footer}>
       {children}
