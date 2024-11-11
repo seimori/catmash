@@ -1,6 +1,27 @@
 .rankCard {
-  height: 200px;
+  min-height: 200px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 5px;
+  background-color: rgba(240, 240, 240, 0.6);
+}
+
+.goldRankCard {
+  background-color: rgb(255, 215, 0, 0.6);
+  min-height: 300px;
+  width: 350px;
+}
+
+.silverRankCard {
+  background-color: rgb(192, 192, 192, 0.6);
+  min-height: 250px;
+  width: 300px;
+}
+
+.bronzeRankCard {
+  background-color: rgb(206, 137, 70, 0.6);
+  min-height: 230px;
+  width: 300px;
 }

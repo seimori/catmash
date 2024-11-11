@@ -6,7 +6,9 @@ import styles from "./RankCard.module.css";
 
 export const RankCard = ({ cat, rank }: { cat: Cat; rank: number }) => {
   return (
-    <div className={styles.rankCard}>
+    <div
+      className={`${styles.rankCard} ${rank === 1 ? styles.goldRankCard : rank === 2 ? styles.silverRankCard : rank === 3 ? styles.bronzeRankCard : ""}`}
+    >
       <RankBadge rank={rank} />
       <ImageFrame imageData={{ src: cat.url }} />
       <Score score={cat.score} />
