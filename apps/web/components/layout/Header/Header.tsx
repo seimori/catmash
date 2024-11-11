@@ -7,6 +7,7 @@ export const Header = () => {
       <Image
         src="/merging_cats.svg"
         alt="catmash logo"
+        priority={true}
         width="200"
         height="100"
       />

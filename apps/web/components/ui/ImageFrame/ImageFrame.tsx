@@ -8,7 +8,9 @@ export const ImageFrame = ({ imageData }: { imageData: { src: string } }) => {
         className={styles.image}
         src={imageData.src}
         alt="image of a cat"
+        priority={true}
         fill
+        sizes="(max-width: 768px) 100vw, 50vw"
       />
     </div>
   );
