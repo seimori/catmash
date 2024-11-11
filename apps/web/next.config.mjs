@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "http",
         hostname: "*.media.tumblr.com",
       },
+      {
+        protocol: "https",
+        hostname: "*.media.tumblr.com",
+      },
     ],
   },
   env: {

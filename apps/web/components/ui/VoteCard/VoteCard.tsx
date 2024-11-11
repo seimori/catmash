@@ -6,11 +6,24 @@ import { Button } from "../Button/Button";
 import { Cat } from "../../../types";
 import { incrementCatScore } from "../../../utils/incrementCatScore";
 
-export const VoteCard = ({ cat }: { cat: Cat }) => {
+export const VoteCard = ({
+  cat,
+  refetch,
+}: {
+  cat: Cat;
+  refetch: () => void;
+}) => {
   return (
     <div className={styles.voteCard}>
       <ImageFrame imageData={{ src: cat.url }} />
-      <Button onClick={() => incrementCatScore(cat.id)}>J'aime</Button>
+      <Button
+        onClick={() => {
+          incrementCatScore(cat.id);
+          refetch();
+        }}
+      >
+        J'aime
+      </Button>
     </div>
   );
 };
