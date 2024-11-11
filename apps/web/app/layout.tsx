@@ -14,8 +14,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <Header />
-          <MainContent>{children}</MainContent>
-          <Footer>Voir le classement des chats</Footer>
+          {children}
         </Providers>
       </body>
     </html>

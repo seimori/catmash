@@ -9,9 +9,11 @@ import { incrementCatScore } from "../../../utils/incrementCatScore";
 export const VoteCard = ({
   cat,
   refetch,
+  incrementDuelCount,
 }: {
   cat: Cat;
   refetch: () => void;
+  incrementDuelCount: () => void;
 }) => {
   return (
     <div className={styles.voteCard}>
@@ -21,6 +23,7 @@ export const VoteCard = ({
           onClick={() => {
             incrementCatScore(cat.id);
             refetch();
+            incrementDuelCount();
           }}
         >
           J'aime
