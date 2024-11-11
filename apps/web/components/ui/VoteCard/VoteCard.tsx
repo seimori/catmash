@@ -16,14 +16,16 @@ export const VoteCard = ({
   return (
     <div className={styles.voteCard}>
       <ImageFrame imageData={{ src: cat.url }} />
-      <Button
-        onClick={() => {
-          incrementCatScore(cat.id);
-          refetch();
-        }}
-      >
-        J'aime
-      </Button>
+      <div className={styles.buttonContainer}>
+        <Button
+          onClick={() => {
+            incrementCatScore(cat.id);
+            refetch();
+          }}
+        >
+          J'aime
+        </Button>
+      </div>
     </div>
   );
 };
