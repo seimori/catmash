@@ -1,11 +1,10 @@
 import { Header } from "../components/layout/Header/Header";
 import Providers from "../components/utils/Providers";
 import "./globals.css";
-import { Open_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 
-const openSans = Open_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-open-sans",
 });
 
 export default function RootLayout({
@@ -14,12 +13,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={openSans.className}>
+    <html lang="en" className={inter.className}>
       <body>
-        <Providers>
-          <Header />
-          {children}
-        </Providers>
+        <Header />
+        {children}
       </body>
     </html>
   );
