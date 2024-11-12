@@ -6,7 +6,7 @@ export const useGetDuelingCats = () => {
   const [firstDuelingCat, setFirstDuelingCat] = useState<Cat>();
   const [secondDuelingCat, setSecondDuelingCat] = useState<Cat>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [error, setError] = useState<Error | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const fetchDuelingCats = useCallback(async () => {
     setIsLoading(true);
@@ -16,8 +16,12 @@ export const useGetDuelingCats = () => {
 
       setFirstDuelingCat(data[0]);
       setSecondDuelingCat(data[1]);
-    } catch (err) {
-      setError(err.message);
+    } catch (error) {
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError("An unknown error occured");
+      }
     } finally {
       setIsLoading(false);
     }

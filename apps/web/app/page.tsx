@@ -17,7 +17,7 @@ export default function Home() {
     console.error(error);
     return <div>Error</div>;
   }
-  if (isLoading) return <div>...Loading</div>;
+  if (isLoading) return <div>Loading...</div>;
   if (!firstDuelingCat || !secondDuelingCat) {
     throw new Error("Problem getting the dueling cats");
   }
