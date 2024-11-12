@@ -1,3 +1,30 @@
+.rankingLayout {
+  display: grid;
+  align-items: end;
+  justify-items: center;
+  justify-content: center;
+  gap: 0.8em;
+  grid-template-columns: repeat(autofit, 1fr);
+  grid-template-areas:
+    "gold"
+    "silver"
+    "bronze";
+}
+
+@media (min-width: 768px) {
+  .rankingLayout {
+    grid-template-areas:
+      "gold gold"
+      "silver bronze";
+  }
+}
+
+@media (min-width: 1024px) {
+  .rankingLayout {
+    grid-template-areas: "silver gold gold bronze";
+  }
+}
+
 .rankCard {
   min-height: 200px;
   width: 200px;
@@ -9,19 +36,22 @@
 }
 
 .goldRankCard {
+  grid-area: gold;
   background-color: rgb(255, 215, 0, 0.6);
   min-height: 300px;
   width: 350px;
 }
 
 .silverRankCard {
+  grid-area: silver;
   background-color: rgb(192, 192, 192, 0.6);
   min-height: 250px;
-  width: 300px;
+  width: 230px;
 }
 
 .bronzeRankCard {
+  grid-area: bronze;
   background-color: rgb(206, 137, 70, 0.6);
   min-height: 230px;
-  width: 300px;
+  width: 220px;
 }
